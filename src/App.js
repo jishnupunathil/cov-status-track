@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-import { BrowserRouter,Route,Link,Routes } from 'react-router-dom';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import India from './components/India';
 import World from './components/World';
 import Header from './components/Header';
