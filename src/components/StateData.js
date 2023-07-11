@@ -1,6 +1,6 @@
 import Axios from "axios";
 import React, { Component } from "react";
-import { Accordion, Card, Button } from "react-bootstrap";
+import { Accordion } from "react-bootstrap";
 
 class StateData extends Component {
   constructor() {
@@ -34,7 +34,7 @@ class StateData extends Component {
             key.map((itm,key)=>{
             
                 let districts=this.state.stateDate[itm].districtData
-                let district_keys=Object.keys(districts)
+                // let district_keys=Object.keys(districts)
 
                 let total_active=0;
                 let total_confirmed=0;
@@ -47,7 +47,7 @@ class StateData extends Component {
                     total_active+=districts[x].active
                     total_confirmed+=districts[x].confirmed
                     total_recovered+=districts[x].recovered
-                    total_death+=districts[x].death
+                    total_death+=districts[x].deceased
                     let ob=districts[x]
                     ob["districr_name"]=x
                     districts_list.push(ob)
@@ -57,7 +57,8 @@ class StateData extends Component {
                 return(
 
                     <Accordion.Item eventKey={key}>
-                      <Accordion.Header>{itm}</Accordion.Header>
+                      <Accordion.Header>{itm} <span style={{margin:'0px 0px 0px 550px',background:'yellow'}}> Total Case :
+                      <b>{total_confirmed}</b>---Active Cases: <b>{total_active}</b>--- Recovered :<b>{total_recovered}</b> ---Death :<b>{total_death}</b></span></Accordion.Header>
                       <Accordion.Body>
                         <table className="table table-bordered table-striped">
                             <thead>

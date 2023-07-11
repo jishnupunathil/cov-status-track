@@ -10,20 +10,20 @@ class  Header extends Component {
     render(){
 
         return (
+          <BrowserRouter>
             <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">Covid-19</Navbar.Brand>
+        <Navbar.Brand><Link to='/'>Covid-19</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-        <BrowserRouter>
-        <Link className='nav-link' to="/india">India</Link>
-        <Link className='nav-link' to="/world">World</Link>
-        </BrowserRouter>
-            </Nav>
+        <Link className='nav-link' to="india">India</Link>
+        <Link className='nav-link' to="world">World</Link>
+        </Nav>
         </Navbar.Collapse>
-      </Container>
-      </Navbar>
+        </Container>
+        </Navbar>
+        </BrowserRouter>
       );
     }
 }

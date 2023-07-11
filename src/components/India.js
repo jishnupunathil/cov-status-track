@@ -1,9 +1,25 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
 import StateData from "./StateData";
+import axios from "axios";
 
 
 class India extends Component {
+
+
+  constructor(){
+    super()
+    this.state={
+      data:{}
+    }
+  }
+  componentDidMount(){
+
+    axios.get('https://corona.lmao.ninja/v2/countries/india').then((res)=>{
+      this.setState({data:res.data})
+    })
+  }
+
   render() {
     return (
       <div className="row">
@@ -21,8 +37,7 @@ class India extends Component {
               <Card bg="primary" style={{ width: "18rem" }}>
                 <Card.Body className="text-center">
                   <Card.Title>Total Case</Card.Title>
-                  <h3>19767</h3>
-                  <Card.Text>[Today:25]</Card.Text>
+                  <h3>{this.state.data.cases}</h3>
                 </Card.Body>
               </Card>
             </div>
@@ -30,8 +45,7 @@ class India extends Component {
               <Card bg="warning" style={{ width: "18rem" }}>
                 <Card.Body className="text-center">
                   <Card.Title>Active Cases</Card.Title>
-                  <h3>19767</h3>
-                  <Card.Text>[Today:25]</Card.Text>
+                  <h3>{this.state.data.active}</h3>
                 </Card.Body>
               </Card>
             </div>
@@ -39,8 +53,7 @@ class India extends Component {
               <Card bg="success" style={{ width: "18rem" }}>
                 <Card.Body className="text-center">
                   <Card.Title>Recovered</Card.Title>
-                  <h3>19767</h3>
-                  <Card.Text>[Today:25]</Card.Text>
+                  <h3>{this.state.data.recovered}</h3>
                 </Card.Body>
               </Card>
             </div>
@@ -48,8 +61,7 @@ class India extends Component {
               <Card bg="danger" style={{ width: "18rem" }}>
                 <Card.Body className="text-center">
                   <Card.Title>Death</Card.Title>
-                  <h3>19767</h3>
-                  <Card.Text>[Today:25]</Card.Text>
+                  <h3>{this.state.data.deaths}</h3>
                 </Card.Body>
               </Card>
             </div>

@@ -16,9 +16,9 @@ class App extends Component{
       <Header/>
         <BrowserRouter>
         <Routes>
-          <Route path='/' element={<India/>}></Route>
-          <Route path='/india' element={<India/>}></Route>
-          <Route path='/world' element={<World/>}></Route>
+          <Route exact path='/' element={<India/>}/>
+          <Route path='/india' element={<India/>}/>
+          <Route path='/world' element={<World/>}/>
         
         </Routes>
         
