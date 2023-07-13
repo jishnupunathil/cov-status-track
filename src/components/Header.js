@@ -10,7 +10,7 @@ class  Header extends Component {
     render(){
 
         return (
-          <BrowserRouter>
+          
             <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand><Link to='/'>Covid-19</Link></Navbar.Brand>
@@ -23,7 +23,6 @@ class  Header extends Component {
         </Navbar.Collapse>
         </Container>
         </Navbar>
-        </BrowserRouter>
       );
     }
 }
